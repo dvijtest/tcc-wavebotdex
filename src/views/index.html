@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <title>WaveBotDex</title>
+  </head>
+  <body>
+    <div class="main-wrapper" id="sideMenuCollapse">
+      <div class="sidebar">
+        <div class="logo"><a href="#">WaveBotDex</a></div>
+        <nav class="menu">
+          <ul class="nav" id="side_menu">
+            <li class="active" action="dashboard">
+              <a href="#">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 598 512">
+                    <path
+                      d="M570.24 247.41L323.87 45a56.06 56.06 0 0 0-71.74 0L5.76 247.41a16 16 0 0 0-2 22.54L14 282.25a16 16 0 0 0 22.53 2L64 261.69V448a32.09 32.09 0 0 0 32 32h128a32.09 32.09 0 0 0 32-32V344h64v104a32.09 32.09 0 0 0 32 32h128a32.07 32.07 0 0 0 32-31.76V261.67l27.53 22.62a16 16 0 0 0 22.53-2L572.29 270a16 16 0 0 0-2.05-22.59zM463.85 432H368V328a32.09 32.09 0 0 0-32-32h-96a32.09 32.09 0 0 0-32 32v104h-96V222.27L288 77.65l176 144.56z"
+                    />
+                  </svg>
+                </div>
+                <span>Home</span>
+              </a>
+            </li>
+            <!-- <li action="trade">
+                          <a href="#">
+                              <div class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M117.65 277.65c6.25 6.25 16.38 6.25 22.63 0L192 225.94l84.69 84.69c6.25 6.25 16.38 6.25 22.63 0L409.54 200.4l29.49 29.5c15.12 15.12 40.97 4.41 40.97-16.97V112c0-8.84-7.16-16-16-16H363.07c-21.38 0-32.09 25.85-16.97 40.97l29.5 29.49-87.6 87.6-84.69-84.69c-6.25-6.25-16.38-6.25-22.63 0l-74.34 74.34c-6.25 6.25-6.25 16.38 0 22.63l11.31 11.31zM496 400H48V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16z"/></svg>
+                              </div>
+                              <span>Trader</span>
+                          </a>
+                      </li> -->
+            <li action="bots">
+              <a href="#">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M272,208a32,32,0,1,0-32-32A31.99783,31.99783,0,0,0,272,208Zm-64,64h32V240H208Zm64,0h32V240H272Zm103.48828,35.23633A79.15715,79.15715,0,0,0,384,272V256h29.99955A17.97977,17.97977,0,0,0,432,238V178a17.97853,17.97853,0,0,0-18.00045-18H384V144a79.999,79.999,0,0,0-80-80H248V24a24,24,0,0,0-48,0V64H144a79.999,79.999,0,0,0-80,80v16H33.99956A17.97834,17.97834,0,0,0,16,178v60a17.97958,17.97958,0,0,0,17.99956,18H64v16a79.15715,79.15715,0,0,0,8.51172,35.23633C30.91406,317.75977,0,355.13086,0,400v48a64.00067,64.00067,0,0,0,64,64H384a64.00067,64.00067,0,0,0,64-64V400C448,355.13086,417.08594,317.75977,375.48828,307.23633ZM112,144a32.03667,32.03667,0,0,1,32-32H304a32.03667,32.03667,0,0,1,32,32V272a32.03667,32.03667,0,0,1-32,32H144a32.03667,32.03667,0,0,1-32-32Zm96,320H176V432a16,16,0,0,1,32,0Zm64-16a16,16,0,1,1,16-16A16.00079,16.00079,0,0,1,272,448Zm128,0a16.01833,16.01833,0,0,1-16,16H320V416a31.99908,31.99908,0,0,0-32-32H160a31.99908,31.99908,0,0,0-32,32v48H64a16.01833,16.01833,0,0,1-16-16V400a48.055,48.055,0,0,1,48-48H352a48.055,48.055,0,0,1,48,48ZM176,208a32,32,0,1,0-32-32A31.99783,31.99783,0,0,0,176,208Zm0,32H144v32h32Z"
+                    />
+                  </svg>
+                </div>
+                <span>Bots</span>
+              </a>
+            </li>
+            <li action="addbot">
+              <a href="#">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"
+                    />
+                  </svg>
+                </div>
+                <span>Add Bot</span>
+              </a>
+            </li>
+            <li action="deals">
+              <a href="#">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M369.83 97.98L285.94 14.1c-9-9-21.2-14.1-33.89-14.1H47.99C21.5.1 0 21.6 0 48.09v415.92C0 490.5 21.5 512 47.99 512h287.94c26.5 0 48.07-21.5 48.07-47.99V131.97c0-12.69-5.17-24.99-14.17-33.99zM255.95 51.99l76.09 76.08h-76.09V51.99zM336 464.01H47.99V48.09h159.97v103.98c0 13.3 10.7 23.99 24 23.99H336v287.95zM208 216c0-4.42-3.58-8-8-8h-16c-4.42 0-8 3.58-8 8v24.12c-23.62.63-42.67 20.55-42.67 45.07 0 19.97 12.98 37.81 31.58 43.39l45 13.5c5.16 1.55 8.77 6.78 8.77 12.73 0 7.27-5.3 13.19-11.8 13.19h-28.11c-4.56 0-8.96-1.29-12.82-3.72-3.24-2.03-7.36-1.91-10.13.73l-11.75 11.21c-3.53 3.37-3.33 9.21.57 12.14 9.1 6.83 20.08 10.77 31.37 11.35V424c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-24.12c23.62-.63 42.67-20.54 42.67-45.07 0-19.97-12.98-37.81-31.58-43.39l-45-13.5c-5.16-1.55-8.77-6.78-8.77-12.73 0-7.27 5.3-13.19 11.8-13.19h28.11c4.56 0 8.96 1.29 12.82 3.72 3.24 2.03 7.36 1.91 10.13-.73l11.75-11.21c3.53-3.37 3.33-9.21-.57-12.14-9.1-6.83-20.08-10.77-31.37-11.35V216zM88 112h80c4.42 0 8-3.58 8-8V88c0-4.42-3.58-8-8-8H88c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8zm88 56v-16c0-4.42-3.58-8-8-8H88c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h80c4.42 0 8-3.58 8-8z"
+                    />
+                  </svg>
+                </div>
+                <span>Deals History</span>
+              </a>
+            </li>
+            <li action="transactions">
+              <a href="#">
+                <div class="icon">
+                  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"><path d="M240 591 c-71 -23 -171 -108 -141 -119 8 -3 25 -16 39 -31 l23 -26 17 22 c50 63 159 83 232 42 55 -31 117 -139 80 -139 -27 0 -19 -34 20 -86 47 -63 50 -62 100 16 31 49 33 70 4 70 -8 0 -14 10 -14 23 -1 64 -79 170 -155 209 -43 23 -161 34 -205 19z"/><path d="M58 409 c-61 -82 -69 -109 -32 -109 8 0 14 -10 14 -22 1 -65 78 -170 155 -211 57 -31 193 -31 250 0 53 28 115 94 96 101 -8 3 -25 16 -39 31 l-23 26 -17 -22 c-50 -63 -159 -83 -232 -42 -37 21 -90 90 -90 117 0 8 8 20 17 27 21 15 12 36 -41 99 l-33 39 -25 -34z"/><path d="M283 403 c-40 -46 -21 -103 33 -103 15 0 24 -6 24 -15 0 -17 -35 -21 -45 -5 -9 15 -35 12 -35 -4 0 -16 45 -66 60 -66 19 0 60 52 60 76 0 29 -25 54 -56 54 -15 0 -24 6 -24 15 0 17 35 21 45 5 9 -15 35 -12 35 4 0 18 -46 66 -62 65 -7 0 -23 -12 -35 -26z"/></g>
+                  </svg>
+                </div>
+                <span>Transactions</span>
+              </a>
+            </li>
+            <li action="signals">
+              <a href="#">
+                <div class="icon">
+                  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.000000 24.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+                    fill="#000000" stroke="none">
+                    <path d="M105 163 c-4 -21 -9 -47 -12 -58 -6 -19 -6 -19 -14 3 -8 22 -49 32
+                    -49 12 0 -5 8 -10 19 -10 13 0 21 -10 25 -32 7 -31 8 -32 21 -14 8 11 15 31
+                    15 45 0 14 5 33 10 41 8 12 10 10 10 -11 0 -14 6 -34 14 -45 14 -18 15 -18 21
+                    -1 4 9 16 17 26 17 10 0 19 5 19 10 0 13 -33 13 -47 -1 -7 -7 -14 3 -22 35
+                    -14 56 -28 59 -36 9z"/>
+                    </g>
+                  </svg>
+                </div>
+                <span>Signals</span>
+              </a>
+            </li>
+            <li action="settings">
+              <a href="#">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M452.515 237l31.843-18.382c9.426-5.441 13.996-16.542 11.177-27.054-11.404-42.531-33.842-80.547-64.058-110.797-7.68-7.688-19.575-9.246-28.985-3.811l-31.785 18.358a196.276 196.276 0 0 0-32.899-19.02V39.541a24.016 24.016 0 0 0-17.842-23.206c-41.761-11.107-86.117-11.121-127.93-.001-10.519 2.798-17.844 12.321-17.844 23.206v36.753a196.276 196.276 0 0 0-32.899 19.02l-31.785-18.358c-9.41-5.435-21.305-3.877-28.985 3.811-30.216 30.25-52.654 68.265-64.058 110.797-2.819 10.512 1.751 21.613 11.177 27.054L59.485 237a197.715 197.715 0 0 0 0 37.999l-31.843 18.382c-9.426 5.441-13.996 16.542-11.177 27.054 11.404 42.531 33.842 80.547 64.058 110.797 7.68 7.688 19.575 9.246 28.985 3.811l31.785-18.358a196.202 196.202 0 0 0 32.899 19.019v36.753a24.016 24.016 0 0 0 17.842 23.206c41.761 11.107 86.117 11.122 127.93.001 10.519-2.798 17.844-12.321 17.844-23.206v-36.753a196.34 196.34 0 0 0 32.899-19.019l31.785 18.358c9.41 5.435 21.305 3.877 28.985-3.811 30.216-30.25 52.654-68.266 64.058-110.797 2.819-10.512-1.751-21.613-11.177-27.054L452.515 275c1.22-12.65 1.22-25.35 0-38zm-52.679 63.019l43.819 25.289a200.138 200.138 0 0 1-33.849 58.528l-43.829-25.309c-31.984 27.397-36.659 30.077-76.168 44.029v50.599a200.917 200.917 0 0 1-67.618 0v-50.599c-39.504-13.95-44.196-16.642-76.168-44.029l-43.829 25.309a200.15 200.15 0 0 1-33.849-58.528l43.819-25.289c-7.63-41.299-7.634-46.719 0-88.038l-43.819-25.289c7.85-21.229 19.31-41.049 33.849-58.529l43.829 25.309c31.984-27.397 36.66-30.078 76.168-44.029V58.845a200.917 200.917 0 0 1 67.618 0v50.599c39.504 13.95 44.196 16.642 76.168 44.029l43.829-25.309a200.143 200.143 0 0 1 33.849 58.529l-43.819 25.289c7.631 41.3 7.634 46.718 0 88.037zM256 160c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 144c-26.468 0-48-21.532-48-48 0-26.467 21.532-48 48-48s48 21.533 48 48c0 26.468-21.532 48-48 48z"
+                    />
+                  </svg>
+                </div>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li action="logs">
+              <a href="#">
+                <div class="icon">
+                  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16.000000pt" height="16.000000pt" viewBox="0 0 16.000000 16.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,16.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                      <path d="M44 133 c-3 -10 -10 -25 -15 -33 -21 -34 -21 -42 2 -66 19 -21 31 -24 69 -22 l45 3 3 49 c2 35 -2 53 -14 67 -23 25 -82 26 -90 2z m80 -9 c10 -9 16 -33 16 -60 l0 -44 -42 0 c-62 0 -99 40 -63 70 8 7 15 21 15 31 0 24 51 26 74 3z"/>
+                      <path d="M72 81 c9 -15 9 -23 -1 -35 -8 -10 -9 -16 -3 -16 6 0 13 8 17 19 6 21 -3 51 -16 51 -5 0 -4 -9 3 -19z"/>
+                    </g>
+                  </svg>
+                </div>
+                <span>Logs</span>
+              </a>
+            </li>
+            <li action="about_us">
+              <a href="#">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M448 112V96c0-35.35-28.65-64-64-64H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h352c35.35 0 64-28.65 64-64V176c0-35.35-28.65-64-64-64zm16 304c0 8.82-7.18 16-16 16H96c-26.47 0-48-21.53-48-48V128c0-26.47 21.53-48 48-48h288c8.82 0 16 7.18 16 16v32H112c-8.84 0-16 7.16-16 16s7.16 16 16 16h336c8.82 0 16 7.18 16 16v240zm-80-160c-17.67 0-32 14.33-32 32s14.33 32 32 32 32-14.33 32-32-14.33-32-32-32z"
+                    />
+                  </svg>
+                </div>
+                <span>About Us</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="theme-switch-wrapper">
+          <p> Live Mode </p>
+          <label class="mode-switch" for="mode_checkbox">
+            <input type="checkbox" id="mode_checkbox" />
+            <div class="mode-slider round"></div>
+          </label>
+        </div>
+
+        <div class="theme-switch-wrapper">
+          <p>Account</p>
+          <label class="theme-balance" id="global_account"></label>
+        </div>
+        <!-- <div class="theme-switch-wrapper">
+            <p>BNB Balance</p>
+            <label class="theme-balance" id="global_balance_bnb">150.20</label>
+        </div> -->
+        <!---
+        <div class="theme-switch-wrapper">
+          <p>Mode</p>
+          <label class="mode-switch" for="mode_checkbox">
+            <input type="checkbox" id="mode_checkbox" />
+            <div class="mode-slider round"></div>
+          </label>
+        </div>
+      -->
+        <div class="theme-switch-wrapper">
+          <p>Dark Mode</p>
+          <label class="theme-switch" for="theme_mode">
+            <input type="checkbox" id="theme_mode" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+        <div class="theme-switch-wrapper">
+          <p class="copyright">&copy; TheCryptoCode.com</p>
+          <span id="live_clock" class="clock"></span>
+        </div>
+      </div>
+      <!-- .sidebar end -->
+
+      <div class="content-wrapper">
+        <header>
+          <div class="heading d-flex">
+            <button class="collapse-btn" id="toggleMenu">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"
+                />
+              </svg>
+            </button>
+
+            <h2 id="page_title">Dashboard</h2>
+          </div>
+          <div id="title_loading"></div>
+          <div class="right-content">
+            <div class="subs-left">
+              <p><a href="#" target="_blank" id="check_balance">Balance: <span id="bnb_balance">0</span>(BNB) <span id="usdt_balance"></span></a></p>
+            </div>
+          </div>
+        </header>
+        <div id="main_container"></div>
+      </div>
+    </div>
+    <div id="add_bot_token" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="modal_closed" class="close">&times;</span>
+          <h2 class="modal-title">Add Token Pair</h2>
+        </div>
+        <div class="modal-body">
+          <div class="form-wrapper" id="add_token_form">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Enter Pair Address</label>
+                  <input type="text" id="add_pair_address" class="form-control" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div id="toggle-switch-container">
+                    <label>Reverse Token</label><br />
+                    <label class="switch_closedeal" for="toggle_token">
+                      <input type="checkbox" id="toggle_token" disabled data-on="1" data-off="0" />
+                      <div class="activate_slider round"></div>
+                    </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Trading Token Address</label>
+                  <input disabled type="text" id="token0_address" class="form-control" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Trading Token Name</label>
+                  <input disabled type="text" id="token0_name" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Base Token Address</label>
+                  <input disabled type="text" id="token1_address" class="form-control" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label>Base Token Name</label>
+                  <input disabled type="text" id="token1_name" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <!---
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>Token Price</label>
+                            <input type="text"  id="add_token_price" class="form-control" />
+                        </div>
+                    </div>
+                -->
+            <div class="col-12">
+              <div class="form-group">
+                <button disabled class="btn btn-primary" id="add_token">Add Token Pair</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="loadingContainer">
+      <div class="text-center loading">
+          <div class="spinner-border" role="status">
+              <span class="sr-only"><img src="../assets/loading.gif" width="50%" /></span>
+          </div>
+      </div>
+    </div>
+
+    <script>
+      const bytenode = require('bytenode');
+      var {common} = require('../js/common.jsc');
+      let cmm = new common();
+      cmm.processLoading("dashboard");
+      cmm.initialise();
+      cmm.processBackground();
+    </script>
+  </body>
+</html>

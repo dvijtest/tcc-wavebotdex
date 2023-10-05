@@ -1,0 +1,67 @@
+{
+  "name": "wavebotdex",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "WaveBotdex is a bot for dca trading of crypto tokens on decentralized exchanges",
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --cache --max-warnings 0",
+    "start": "npm run clean && electron-forge start",
+    "make": "npm run clean && electron-forge make",
+    "clean": "rimraf .eslintcache .webpack out",
+    "package": "electron-forge package",
+    "publish": "electron-forge publish"
+  },
+  "author": {
+    "name": "Ajay Ahire"
+  },
+  "keywords": [
+    "Wavebot",
+    "dex",
+    "crypto",
+    "trading",
+    "bot"
+  ],
+  "license": "ISC",
+  "publishers": [
+    {
+      "name": "@electron-forge/publisher-github",
+      "config": {
+        "repository": {
+          "owner": "dvijtest",
+          "name": "tcc-wavebotdex"
+        }
+      }
+    }
+  ],
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.5",
+    "@electron-forge/maker-deb": "6.0.5",
+    "@electron-forge/maker-rpm": "6.0.5",
+    "@electron-forge/maker-squirrel": "6.0.5",
+    "@electron-forge/maker-zip": "6.0.5",
+    "@electron-forge/plugin-webpack": "6.0.5",
+    "@herberttn/bytenode-webpack-plugin": "2.3.0",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "css-loader": "6.7.3",
+    "electron": "23.1.1",
+    "eslint": "8.35.0",
+    "eslint-plugin-import": "2.27.5",
+    "load-json-file": "6.2.0",
+    "node-loader": "2.0.0",
+    "rimraf": "^4.1.2",
+    "style-loader": "3.3.1"
+  },
+  "dependencies": {
+    "@electron-forge/publisher-github": "^6.4.1",
+    "@pancakeswap-libs/sdk": "^1.0.1",
+    "bytenode": "^1.5.0",
+    "crypto-js": "^4.1.1",
+    "electron-log": "^4.4.8",
+    "electron-squirrel-startup": "1.0.0",
+    "ethers": "^5.4.0",
+    "jquery": "^3.6.3",
+    "sqlite3": "^5.1.4",
+    "update-electron-app": "^2.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="inner-wrapper">
+    <div class="header table-search d-flex jc-sb">
+      <div class="search">
+        <input
+          type="text"
+          id="search_transaction"
+          class="form-control"
+          placeholder="Search..."
+        />
+      </div>
+      <div class="filter d-flex">
+        <p>Filter:</p>
+        <button type="button" class="btn btn-primary" id="all_button">
+          All
+        </button>
+        <button type="button" class="btn btn-primary" id="success_button">
+          Success
+        </button>
+        <button type="button" class="btn btn-primary" id="failed_button">
+          Failed
+        </button>
+        <button type="button" class="btn btn-primary" id="pending_button">
+          Pending
+        </button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <div class="row-12 m-0 table table-striped" id="transactions_table"></div>
+      <div id="pagination">
+        <button id="prev-btn">&laquo; Prev</button>
+        <button id="next-btn">Next &raquo;</button>
+      </div>
+    </div>
+  </div>
+</div>

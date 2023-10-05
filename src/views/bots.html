@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="inner-wrapper">
+        <div class="header table-search d-flex jc-sb">
+            <div class="search">
+                <input type="text" id = 'search_id' class="form-control" placeholder="Search...">
+            </div>
+            <div class="filter d-flex">
+                <p>Filter: </p>
+                <button type="button" class="btn btn-primary" id="all">All</button>
+                <button type="button" class="btn btn-primary" id="active">Active</button>
+                <button type="button" class="btn btn-primary" id = "disabled">Disabled</button>
+                <!--<button type="button" class="btn btn-primary">Archived</button>-->
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <div class="table table-striped row-12 m-0" id="bots_table"></div>
+                <div id="pagination">
+                    <button id="prev-btn1">&laquo; Prev</button>
+                    <button id="next-btn1">Next &raquo;</button>
+                </div>           
+        </div>
+    </div>
+</div>

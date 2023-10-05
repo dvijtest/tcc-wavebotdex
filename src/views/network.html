@@ -1,0 +1,55 @@
+<div class="form-wrapper center-form border" id="dex_form">
+    <div class="header">
+        <h3>Dex Configuration</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label>Dex/Chain</label>
+                <select class="form-control" id="network">
+                    <option value="Pancakeswap">PanCakeSwap/BNB Chain</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label>Transaction Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter transaction password">
+            </div>
+        </div>
+
+        <!-- <div class="col-6">
+            <div class="form-group">
+                <label>Ankr URL</label>
+                <input type="text" id="ankr_url" class="form-control" placeholder="Enter ankr url">
+            </div>
+        </div> -->
+
+        <div class="col-6">
+            <div class="form-group">
+                <label>Gas Fees (gwei)</label>
+                <input type="text" class="form-control" id="gas_charge" placeholder="Enter gas fees">
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label>Maximum Gas</label>
+                <input type="text" class="form-control" id="maximum_gas" placeholder="Enter maximum gas">
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label>Max Failed Transactions Per Deal</label>
+                <input type="text" class="form-control" id="max_failed" placeholder="Enter maximum failed transactions per deal">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-footer">
+        <button type="button" class="btn btn-primary" id="saveNetworkData">Save</button>
+    </div>
+</div>

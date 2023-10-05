@@ -1,0 +1,504 @@
+<form id="addbot_form">
+    <div class="wrapper">
+        <div class="inner-wrapper">
+            <div class="row m-0">
+                <div class="col-8" style="width:65%">
+                    <div class="row m-0">
+                        <div class="col-12">
+                            <div class="form-wrapper border my-5">
+                                <div class="header">
+                                    <h3>Main Setup</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Name<span class="required">*</span></label>
+                                            <input type="text" id="label" class="form-control" placeholder="Enter bot name for recognition" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Mode<span class="required">*</span></label>
+                                            <select id="mode" class="form-control">
+                                                <option value="demo">Demo/Paper Trading</option>
+                                                <option value="live">Live</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Password<span class="required">*</span></label>
+                                            <input type="password" id="password" class="form-control" placeholder="Enter bot password" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-wrapper border my-5">
+                                <div class="header">
+                                    <h3>Strategy</h3>
+                                </div>
+
+                                <div class="helper-text">
+                                    <p>Setting required to setup Strategy using bot</p>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Dex/Chain<span class="required">*</span></label>
+                                            <select id="network" class="form-control">
+                                                <option value="Pancakeswap">PanCakeSwap/BNB Chain</option>
+                                                <!--<option value="live">Live Trading</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Tokens<span class="required">*</span></label>
+                                            <input type="text" placeholder="Search Token Pairs.." id="token_input">
+                                            <select id="token" class="form-control token_class">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Base Order Size<span class="required">*</span></label>
+                                            <div class="column_baseorder">
+                                                <select id="base_token" class="form-control">
+                                                    <!-- <option value="BNB">BNB</option>
+                                                    <option value="BUSD">BUSD</option>
+                                                    <option value="CAKE">CAKE</option>
+                                                    <option value="USDT">USDT</option> -->
+                                                </select>
+                                            </div>
+                                            <div class="column_baseorder">
+                                                <input type="text" id="base_order_size" class="form-control" value="20" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column_baseorder form-group d-flex jc-sb">
+                                        <a href="#" id="add_token_btn">+ Add Token</a>
+                                        <a href="#" id="update_token_btn">+ Update Tokens</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-wrapper border my-5">
+                                <div class="header">
+                                    <h3>Condition</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Bot Type<span class="required">*</span></label>
+                                            <select id="start_condition" class="form-control start_condition_class">
+                                                <option value="wavebot">DCA Signals Bot</option>
+                                                <option value="tradingview">DCA Grid</option>
+                                                <option value="asap">DCA ASAP</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group" id = 'tv_time_dropdown'>
+                                            <label>Signal Expiration Time<span class="required">*</span></label>
+                                            <select id="tv_time" class="form-control tv_time_class">
+                                                <option value="1">1 minutes</option>
+                                                <option value="2">2 minutes</option>
+                                                <option value="3">3 minutes</option>
+                                                <option value="4">4 minutes</option>
+                                                <option value="5">5 minutes</option>
+                                                <option value="10">10 minutes</option>
+                                                <option value="15">15 minutes</option>
+                                                <option value="20">20 minutes</option>
+                                                <option value="25">25 minutes</option>
+                                                <option value="30">30 minutes</option>
+                                                <option value="35">35 minutes</option>
+                                                <option value="40">40 minutes</option>
+                                                <option value="45">45 minutes</option>
+                                                <option value="50">50 minutes</option>
+                                                <option value="55">55 minutes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div id="content_signal_depended">
+                                            <h3>Safety order should be always less then last safety order</h3>
+                                            <label class="trailing-switch" for="is_lower_safety">
+                                                <input type="checkbox" id="is_lower_safety" class="form-control" checked value="1" data-on="1" data-off="0" />
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Signal Value<span class="required">*</span></label>
+                                            <select id="" class="form-control">
+                                                <option value="">Buy</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-wrapper border my-5">
+                                <div class="header">
+                                    <h3>Take Profit</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Target Profit(%)<span class="required">*</span></label>
+                                            <input type="text" id="target_profit" value="1" class="form-control"
+                                                placeholder="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Take Profit type<span class="required">*</span></label>
+                                            <select id="profit_type" class="form-control">
+                                                <option value="1">Percentage from total volume</option>
+                                                <option value="0">Percentage from base order</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <h3>Trailing</h3>
+                                        <label class="trailing-switch" for="is_profit_trailing">
+                                            <input type="checkbox" id="is_profit_trailing" data-on="1" data-off="0" />
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <div id="content_trailing_switch">
+                                            <label>Trailing Deviation</label>
+                                            <input type="text" id="profit_deviation" class="form-control" placeholder="%" value="0.2" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <h3>Minimum Profit</h3>
+                                        <label class="trailing-stoploss-switch" for="is_trailing_stop_loss">
+                                            <input type="checkbox" id="is_trailing_stop_loss" data-on="1" data-off="0" />
+                                            <div class="slider_trailing-stoploss round"></div>
+                                        </label>
+                                        <div id="content_minimum_profit_switch">
+                                            <label>Minimum Profit (%)</label>
+                                            <input type="text" id="minimum_profit_percent" class="form-control" placeholder="Minimum profit percent" />
+                                        </div>
+                                        <div id="content_stoploss_trailing_switch">
+                                            <label>Price Drop (%)</label>
+                                            <input type="text" id="stoploss_trailing_percent" class="form-control" placeholder="Price drop percent" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-wrapper border my-5">
+                                <div class="header">
+                                    <h3>Stop Loss</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="trailing-switch" for="is_stop_loss">
+                                            <input type="checkbox" id="is_stop_loss" data-on="1" data-off="0" />
+                                            <div class="slider round"></div>
+                                        </label>
+                                        <div id="content_stoploss" class="col-12">
+                                            <label>Stop loss (%)</label>
+                                            <input type="text" id="stop_loss_percent" value="10" class="form-control" placeholder="%" />
+                                            <br />
+                                            <label>Stop loss Action</label>
+                                            <select id="stop_loss_action" class="form-control">
+                                                <option value="close">Close Deal</option>
+                                                <option value="stop">Close Deal & Stop Bot</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-wrapper border my-5">
+                                <div class="header">
+                                    <h3>Safety Orders / DCA</h3>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Safety Order Size<span class="required">*</span></label>
+                                            <div class="column_baseorder">
+                                                <select id="safety_order" class="form-control"></select>
+                                            </div>
+                                            <div class="column_baseorder">
+                                                <input type="text" id="safety_order_size" class="form-control" value="20" placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <label>Price deviation to open safety orders (% from initial order)<span class="required">*</span></label>
+                                                <!-- <div class="column_safetyorder">
+                                                    <div class="slidecontainer_safeorders">
+                                                        <input type="range" min="0.2" max="20" step="0.1" value="0"
+                                                            class="slider_safeorders" id="price_deviation_range"
+                                                            onchange="priceDeviationRange()" />
+                                                    </div>
+                                                </div> -->
+                                                <div class="">
+                                                    <input type="text" id="price_deviation" value="1" class="form-control" placeholder="%" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6" style="display: none;">
+                                        <div class="form-group">
+                                            <div class="col-12">
+                                                <label>Max Safety orders count<span class="required">*</span></label>
+                                                <!-- <div class="column_safetyorder">
+                                                    <div class="slidecontainer_safeorders">
+                                                        <input type="range" min="0" max="200" value="0" class="slider_safeorders" id="max_safety_order_count_range" onchange="maxSafetyOrdersCountRange()" />
+                                                    </div>
+                                                </div> -->
+                                                <div class="">
+                                                    <input type="text" id="max_safety_order_count" class="form-control" placeholder="%" value="20" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Max active safety orders count<span class="required">*</span></label>
+                                            <!-- <div class="column_safetyorder">
+                                                <div class="slidecontainer_safeorders">
+                                                    <input type="range" min="0" max="20" step="1" value="0" class="slider_safeorders" id="max_active_safety_order_count_range" onchange="maxActiveSafetyOrdersCountRange()" />
+                                                </div>
+                                            </div> -->
+                                            <div class="">
+                                                <input type="text" id="max_active_order_count" class="form-control" placeholder="%" value="5" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <label>Safety order volume scale<span class="required">*</span></label>
+                                                <!-- <div class="column_safetyorder">
+                                                    <div class="slidecontainer_safeorders">
+                                                        <input type="range" min="1" max="10" value="0" class="slider_safeorders" id="safety_order_volume_scale_range" onchange="safetyOrderVolumeScale()" />
+                                                    </div>
+                                                </div> -->
+                                                <div class="">
+                                                    <input type="text" id="volume_scale" class="form-control" placeholder="%" value="1" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <div class="">
+                                                <label>Safety order step scale<span class="required">*</span></label>
+                                                <!-- <div class="column_safetyorder">
+                                                    <div class="slidecontainer_safeorders">
+                                                        <input type="range" min="1" max="10" value="0" class="slider_safeorders" id="safety_order_step_scale_range" onchange="safetyOrderStepScale()" />
+                                                    </div>
+                                                </div> -->
+                                                <div class="">
+                                                    <input type="text" id="step_scale" class="form-control" value="1" placeholder="%" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" style="display: none;">
+                            <div class="form-wrapper-7 border my-7">
+                                <div class="row">
+                                    <div class="header">
+                                        <h3>Close deal after timeout</h3>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="closedeal-switch-wrapper">
+                                            <label class="switch_closedeal" for="is_deal_timeout">
+                                                <input type="checkbox" id="is_deal_timeout" data-on="1" data-off="0" />
+                                                <div class="slider_closedeal round"></div>
+                                            </label>
+                                            <!--<div id="content_closedeal">Some content...</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="content_closedeal">
+                                    <div class="col-8">
+                                        <div class="form-group">
+                                            <label>The time after which , deal will be closed
+                                                automatically<span class="required">*</span></label>
+
+                                            <div class="column_baseorder">
+                                                <div class="row">
+                                                    <select id="timeout_duration" class="form-control_closedeal">
+                                                        <option value="hrs">Hrs</option>
+                                                        <option value="min">Min</option>
+                                                        <option value="days">Days</option>
+                                                    </select>
+                                                    <input type="text" id="close_timeout" class="form-control_closedeal"
+                                                        placeholder="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="col-12">
+                        <div class="sidenav1">
+                            <div class="container_sidenav">
+                                <div class="row box_sidenav1">
+                                    <!-- <input type="radio" class="tab-toggle_sidenav" name="tab-toggle_sidenav" id="tab1" checked /> -->
+                                    <input type="radio" class="tab-toggle_sidenav" name="tab-toggle" id="tab1" checked />
+                                    <input type="radio" class="tab-toggle_sidenav" name="tab-toggle" id="tab2" />
+
+                                    <ul class="tab-list_sidenav col-12">
+                                        <li class="tab-item_sidenav">
+                                            <label class="tab-trigger_sidenav active" for="tab1">Assistant</label>
+                                        </li>
+                                        <li class="tab-item_sidenav" id="bot_table_model">
+                                            <label class="tab-trigger_sidenav" for="tab">Table</label>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-container_sidenav">
+                                        <div class="tab-content_sidenav" id = "tab-content_sidenav_id">
+                                            <div class="col-8">Balance (<span id="tk_token_balance"></span>): </div>
+                                            <div class="col-2"><span id="tk_usdt_balance">0</span></div>
+                                            <div class="col-8">Max amount for bot usage (Based on current rate):</div>
+                                            <div class="col-2"><span class ='max_safety_order_sidenav_class' id="max_safety_order_sidenav">0</span></div>
+                                            <div class="col-8">Max safety order price deviation:</div>
+                                            <div class="col-2"><span class ='max_safety_order_sidenav_class' id="max_safety_order_deviation">0</span></div>
+                                            <!-- <div class="col-8">% of total balance to be used by the bot:</div>
+                                            <div class="col-2"><span id="total_bl_sidenav">0</span></div> -->
+                                        </div>
+                                        <div class="tab-content_sidenav">
+                                            Used Amount for each Step
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-footer_addbot">
+                                    <input type="hidden" id="id" value="0" />
+                                    <div class="row" id="toggle_editbot">
+                                        <div class="col-6">
+                                            <label>Activate Bot</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <div id="toggle-switch-container">
+                                                <label class="switch_closedeal" for="toggle_activate_bot_id">
+                                                    <input type="checkbox" id="toggle_activate_bot_id" value="1" data-on="1" data-off="0" />
+                                                    <div class="activate_slider round"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <label>Stop bot after deal</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <div id="toggle-switch-container">
+                                                <label class="switch_closedeal" for="toggle_stop_bot">
+                                                    <input type="checkbox" id="toggle_stop_bot" value="1" data-on="1" data-off="0" />
+                                                    <div class="activate_slider round"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <input type="button" class="btn btn-warning" id="close_deal_mkr" value="Close deal at market price" />
+                                        </div>
+
+                                        <!-- <div class="col-6">
+                                            <label>Close deal at market price</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <div id="toggle-switch-container">
+                                                <label class="switch_closedeal" for="toggle_close_bot">
+                                                    <input type="checkbox" id="toggle_close_bot" value="1" data-on="1" data-off="0" />
+                                                    <div class="activate_slider round"></div>
+                                                </label>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <button type="button" class="btn btn-primary" id="saveData">Save</button>
+                                    <div id="buttonContainer"></div>
+                                    <button type="button" class="btn btn-primary" id="activateBot">Activate Bot</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="table_bot_predict" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span id="tab_modal_close" class="close">&times;</span>
+            <h2 class="modal-title">Used amount for each step</h2>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Deviation</th>
+                    <th>Order Size</th>
+                    <th>Order Volume</th>
+                    <th>Price</th>
+                    <th>Avgerage</th>
+                    <th>Required</th>
+                    <th>Total Size</th>
+                    <th>Total Volume</th>
+                  </tr>
+                </thead>
+                <tbody id="predict_body_bot">
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+</form>
+<script>
+    $("#enable_buy").on("change", function () {
+        $("#buy_price_div").toggle();
+    });
+</script>
